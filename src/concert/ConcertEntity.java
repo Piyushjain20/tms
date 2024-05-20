@@ -20,27 +20,51 @@ public class ConcertEntity {
         this.zonePrices = zonePrices;
     }
 
-    public static ConcertEntity parseRow(String[] columns) {
-        int id = Integer.parseInt(columns[0]);
-        String date = columns[1];
-        int time = Integer.parseInt(columns[2]);
-        String artist = columns[3];
-        String venue = columns[4];
-        Map<String, ZonePricesEntity> zonePrices = ConcertEntity.parseZonePrices(columns[5], columns[6], columns[7]);
-        return new ConcertEntity(id, date, time, artist, venue, zonePrices);
+    public Integer getId() {
+        return id;
     }
-    private static Map<String, ZonePricesEntity> parseZonePrices(String standing, String seating, String vip) {
-        Map<String, ZonePricesEntity> zonePrices = new HashMap<>();
-        zonePrices.put("STANDING", ConcertEntity.parseZonePrice(standing));
-        zonePrices.put("SEATING", ConcertEntity.parseZonePrice(seating));
-        zonePrices.put("VIP", ConcertEntity.parseZonePrice(vip));
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public Integer getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(Integer startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getArtistName() {
+        return artistName;
+    }
+
+    public void setArtistName(String artistName) {
+        this.artistName = artistName;
+    }
+
+    public String getVenueName() {
+        return venueName;
+    }
+
+    public void setVenueName(String venueName) {
+        this.venueName = venueName;
+    }
+
+    public Map<String, ZonePricesEntity> getZonePrices() {
         return zonePrices;
     }
-    private static ZonePricesEntity parseZonePrice(String priceString) {
-        String[] tokens = priceString.split(":");
-        int leftPrice = Integer.parseInt(tokens[1]);
-        int centerPrice = Integer.parseInt(tokens[2]);
-        int rightPrice = Integer.parseInt(tokens[3]);
-        return new ZonePricesEntity(leftPrice, centerPrice, rightPrice);
+
+    public void setZonePrices(Map<String, ZonePricesEntity> zonePrices) {
+        this.zonePrices = zonePrices;
     }
 }

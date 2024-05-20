@@ -12,6 +12,11 @@ public class CustomerEntity {
         this.password = password;
     }
 
+    public CustomerEntity(String name, String password) {
+        this.name = name;
+        this.password = password;
+    }
+
     public Integer getId() {
         return id;
     }

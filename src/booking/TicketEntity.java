@@ -54,4 +54,13 @@ public class TicketEntity {
     public void setPrice(Float price) {
         this.price = price;
     }
+
+    public String getRowId(){
+        switch (this.zoneType){
+            case "VIP" : return String.format("V%s",this.rowNumber);
+            case "SEATING" : return String.format("S%s",this.rowNumber);
+            case "STANDING" : return String.format("T%s",this.rowNumber);
+        }
+        return null;
+    }
 }

@@ -1,37 +1,37 @@
 package concert;
 
 public class ZonePricesEntity {
-    private int leftPrice;
-    private int centerPrice;
-    private int rightPrice;
+    private float leftPrice;
+    private float centerPrice;
+    private float rightPrice;
 
-    public ZonePricesEntity(int leftPrice, int centerPrice, int rightPrice) {
+    public ZonePricesEntity(float leftPrice, float centerPrice, float rightPrice) {
         this.leftPrice = leftPrice;
         this.centerPrice = centerPrice;
         this.rightPrice = rightPrice;
     }
 
-    public int getLeftPrice() {
+    public float getLeftPrice() {
         return leftPrice;
     }
 
-    public void setLeftPrice(int leftPrice) {
+    public void setLeftPrice(float leftPrice) {
         this.leftPrice = leftPrice;
     }
 
-    public int getCenterPrice() {
+    public float getCenterPrice() {
         return centerPrice;
     }
 
-    public void setCenterPrice(int centerPrice) {
+    public void setCenterPrice(float centerPrice) {
         this.centerPrice = centerPrice;
     }
 
-    public int getRightPrice() {
+    public float getRightPrice() {
         return rightPrice;
     }
 
-    public void setRightPrice(int rightPrice) {
+    public void setRightPrice(float rightPrice) {
         this.rightPrice = rightPrice;
     }
 }

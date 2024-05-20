@@ -66,4 +66,10 @@ public class BookingEntity {
     public void setTicketEntities(List<TicketEntity> ticketEntities) {
         this.ticketEntities = ticketEntities;
     }
+
+    public Float getTotalPrice(){
+        return (float) this.ticketEntities.stream()
+                .mapToDouble(ticket -> ticket.getPrice())
+                .sum();
+    }
 }
